@@ -1,0 +1,59 @@
+/*
+    COLORS
+*/
+$font-color: #2E2E2E;
+$primary-color: #F20530;
+$secondary-color: #1C1C1C;
+$shadow-color: rgba(0,0,0,0.2);
+$bg-color : white;
+
+[data-theme="dark"] {
+    $primary-color: #F20530;
+    $font-color: white;
+    $bg-color: #1C1C1C;
+}
+
+/*
+    FONT WEIGHT
+*/
+$font-weight : (
+    "regular" : 400,
+    "medium" : 500,
+    "bold" : 600,
+    "bolder":700
+);
+
+/*
+    BORDER RADIUS
+*/
+$border-radius : 7px;
+
+
+/*
+    FONT SIZE
+*/
+$font-size : (
+    "regular" : 1rem,
+    "medium" : 2rem,
+    "big" : 3rem,
+    "bigger": 4rem
+);
+
+/*
+    RESPONSIVE
+*/
+
+$desktop : 768px;
+$mobile : 320px;
+
+/*
+    FONT CHANGE
+*/
+
+@function weight($type){
+    @return map-get($font-weight,$type);
+}
+
+@function size($type){
+    @return map-get($font-size,$type);
+}
