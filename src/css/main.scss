@@ -479,14 +479,16 @@ span {
         padding: 0px 50px;
         display: flex;
         align-content: center;
-        justify-content: space-evenly;
+        
 
         h1 {
             font-size: size(big);
             margin-bottom: 10px;
+            text-align: left;
         }
 
         .social-media{
+            margin-left: 20%;
 
             .linkedin{
                 transform: translateX(2px);

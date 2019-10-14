@@ -705,13 +705,14 @@ span {
     display: flex;
     -ms-flex-line-pack: center;
         align-content: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
   }
   #contact h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+    text-align: left;
+  }
+  #contact .social-media {
+    margin-left: 20%;
   }
   #contact .social-media .linkedin {
     -webkit-transform: translateX(2px);
