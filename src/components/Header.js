@@ -23,12 +23,16 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header id="" className="unselectable">
+            <header id="header" className="unselectable">
                 <h1>
-                    Hi, I'm <span>Juan</span> <br />
-                    I'm a Front-End Developer.
-                </h1> <br />
-                <a onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver} rel="noopener noreferrer" id="headerLink" href="#information" className="unselectable headerLink">Who's this guy?<i onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver} className="fas fa-arrow-right"></i> </a>
+                    <span>JUAN <br /> SÁNCHEZ</span>
+                </h1>
+                <h2>Front-End Developer / UI Designer</h2>
+                <a onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver} rel="noopener noreferrer" id="headerLink" href="#information" onClick={this.move} className="unselectable headerLink">Who's this guy?<i onMouseOut={this.onMouseOut} onMouseOver={this.onMouseOver} className="fas fa-arrow-right"></i> </a>
+                <a className="contact" id="contactMe" onClick={this.move} href="#contact">Contact Me <i className="fas fa-arrow-right"></i></a>
+                {/* <div className="scrollDown">
+                    <i className="fas fa-long-arrow-alt-down"></i> Scroll
+                </div> */}
             </header>
         )
     }

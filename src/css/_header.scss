@@ -1,0 +1,108 @@
+@include mobile{
+    header {
+        width: 100%;
+        min-height: 82vh;
+        // position: fixed;
+        overflow: hidden;
+        padding:13% 0 1% 8%;
+        color: $font-color;
+        // z-index: 99;
+        // background: $bg-color;
+
+        h1 {
+            font-size: 9vh;
+            width: 100%;
+        }
+
+        h2 {
+            width: 60%;
+            margin-bottom: 9vh;
+        }
+
+        a.contact {
+            display: block;
+            color: $primary-color;
+            text-decoration: none;
+            margin-top: 4%;
+            font-size: 2vh;
+            font-weight: bold;
+            margin-top: 5vh;
+        }
+
+        .headerLink {
+            text-decoration: none;
+            border: 2px solid $primary-color;
+            font-size: 3vh;
+            padding: 10px 20px;
+            color: $primary-color;
+            font-weight: weight(bold);
+            @include transition;
+
+            i {
+                font-size: 1rem;
+                margin-left: 10px;
+                color: $primary-color;
+                @include transition;
+            }
+
+            &:hover {
+                background: $primary-color;
+                color: white;
+                text-decoration: none;
+                border: 2px solid $primary-color;
+
+                i {
+                    color: white;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .scrollDown{
+            margin-top: 16vh;
+            width: 100%;
+            text-align: left;
+            color: $font-color;
+            font-weight: bold;
+            font-size: 2.2vh;
+
+            i{
+                font-size: 4vh;
+                margin-right: 10px;
+                animation: bounce 2s ease-in-out infinite;
+                @include transition;
+            }
+
+            @keyframes bounce {
+                0% {
+                    transform: translateY(10px);
+                }
+                50%{
+                    transform: translateY(0px);
+                }
+                100%{
+                    transform: translateY(10px);
+                }
+            }
+        }
+    }
+}
+
+@include desktop{
+    header {
+        padding: 2% 0 1% 12%;
+
+        h1 {
+            font-size: 15vh;
+            width: 50%;
+        }
+
+        a.contact {
+            margin-top: 4%;
+        }
+
+        .scrollDown{
+            margin-top: 80px;
+        }
+    }
+}

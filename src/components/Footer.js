@@ -1,20 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-export default class Footer extends Component {
-
-    //constructor (props) {
-        //super(props)
-    //}
-
-    state = {
-        
-    }
-
-    render() {
-        return(
-            <div className="" id="footer">
-                {/* juan sánchez 2019 */}
-            </div>
-        )
-    }
+export default function Footer(props) {
+    return(
+        <div className="footer unselectable" id="footer">
+            <p>Design & Developed by Juan Sánchez using <i className="fab fa-react"></i></p>
+        </div>
+    )
 }

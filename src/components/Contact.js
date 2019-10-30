@@ -1,32 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react'
+import Footer from './Footer';
 
-export default class Contact extends Component {
-
-    //constructor (props) {
-    //super(props)
-    //}
-
-    state = {
-
-    }
-
-    render() {
-        return (
-            <div className="unselectable" id="contact">
-                <div>
-                    <h1>Have any questions?</h1>
-                    <h1>Want to work together?</h1>
-                    <h1>Send me a message!</h1>
-                </div>
-                <div className="social-media">
-                    <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/juan-camilo-sanchez-651805188/">
-                        <i className="fab fa-linkedin linkedin"></i>
-                    </a> <br/>
-                    <a href="mailto: juanc.sanchez.623@gmail.com">
-                        <i className="far fa-envelope"></i>
-                    </a>
-                </div>
+export default function Contact(props) {
+    return (
+        <div className="unselectable" id="contact">
+            <div className="questions">
+                <h1 className="getInTouch">Get In Touch</h1>
+                <a aria-label="Linkedin Profile" rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/juan-camilo-sanchez-651805188/">
+                    <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a aria-label="Send personal message" href="mailto: juanc.sanchez.623@gmail.com">
+                    <i className="far fa-envelope"></i>
+                </a>
             </div>
-        )
-    }
+            <Footer />
+        </div>
+    )
 }
