@@ -131,6 +131,36 @@ export default class Projects extends Component {
               </div>
             </div>
           </div>
+          <div className="card_container">
+            <div className="card">
+              <div className="title">
+                <img
+                  src={window.location.origin + "/images/projects/5.png"}
+                  className="logo unselectable"
+                  alt=""
+                />
+                <h4>Beer Me App</h4>
+              </div>
+              <p className="text">
+                Save the info of your favorite beers, share them across the
+                world.
+              </p>
+              <a
+                title="Link to my project"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://condescending-mestorf-104a46.netlify.com/"
+                className="link"
+              >
+                <i className="fas fa-external-link-alt"></i>
+              </a>
+              <div className="footer">
+                <i className="fab fa-react"></i>
+                <i className="fab fa-sass"></i>
+                <i className="fab fa-js-square"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
