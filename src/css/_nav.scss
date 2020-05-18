@@ -1,63 +1,83 @@
 @include mobile {
-    nav {
-        padding: 50px 10px;
-        font-weight: weight(bold);
-        font-size: 2.5vh;
-        width: 100%;
-        // position: fixed;
-        // z-index: 100;
+  nav {
+    padding: 40px 10px;
+    font-weight: weight(bold);
+    font-size: 2.5vh;
+    width: 100%;
 
-        ul {
-            list-style: none;
-        }
-
-        li {
-            display: inline-block;
-            padding: 0 20px;
-        }
-
-        a {
-            text-decoration: none;
-            @include transition;
-            &:hover {
-                opacity: 0.7;
-            }
-        }
-
-        .logo {
-            text-transform: uppercase;
-            font-weight: weight(bold);
-            font-size: 4vh;
-            color: white;
-            margin-right: 20px;
-            padding: 10px;
-            background: $primary-color;
-            position: absolute;
-            transform: translateY(-30%);
-        }
-
-        span.text {
-            color: $font-color;
-            margin-left: 80px;
-        }
-
-        .switchLi {
-            float: right;
-        }
-
-        .contact {
-            float: right;
-            display: none;
-        }
+    ul {
+      list-style: none;
     }
+
+    li {
+      display: inline-block;
+      padding: 0 20px;
+    }
+
+    a {
+      text-decoration: none;
+      @include transition;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .brand {
+      &-logo {
+        text-transform: uppercase;
+        font-weight: weight(bold);
+        font-size: 4vh;
+        color: white;
+        margin-right: 20px;
+        padding: 10px;
+        background: $primary-color;
+        position: absolute;
+        transform: translateY(-30%);
+      }
+
+      &-text {
+        color: var(--font-color);
+        margin-left: 60px;
+      }
+    }
+
+    .switchLi {
+      float: right;
+      margin-right: 20px;
+      position: relative;
+      i {
+        font-size: 0.8rem;
+        position: absolute;
+        top: 4px;
+        z-index: 100;
+      }
+      &-sun {
+        left: -60%;
+      }
+      &-moon {
+        right: -43%;
+      }
+    }
+
+    .contact {
+      float: right;
+      display: none;
+    }
+  }
 }
 @include desktop {
-    nav {
-        padding: 50px;
+  nav {
+    padding: 50px;
 
-        .contact {
-            float: right;
-            display: block;
-        }
+    .brand {
+      &-text {
+        margin-left: 80px;
+      }
     }
+
+    .contact {
+      float: right;
+      display: block;
+    }
+  }
 }

@@ -6,38 +6,37 @@
         4. Up to you 
 */
 
-@import 'resets';
-@import 'variables';
-@import 'mixins';
+@import "resets";
+@import "variables";
+@import "mixins";
 
-@import 'nav';
-@import 'header';
-@import 'projects';
-@import 'information';
-@import 'contact';
-@import 'footer';
+@import "nav";
+@import "header";
+@import "projects";
+@import "information";
+@import "contact";
+@import "footer";
 
-@import 'loader';
-@import 'switch';
-
+@import "loader";
+@import "switch";
 
 /*
     GENERAL
 */
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    // color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  // color: white;
 }
 
 a {
-    color: $font-color;
+  color: var(--font-color);
 }
 
 body {
-    background: $bg-color;
+  background: var(--bg-color);
 }
 
 span {
-    color: $primary-color;
+  color: $primary-color;
 }

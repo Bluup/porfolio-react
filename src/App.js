@@ -1,185 +1,86 @@
-import React, { Component } from 'react';
-import './css/main.css';
+import React, { useState, useEffect } from "react";
+import "./css/main.css";
 
 //Components
-import Header from './components/Header'
-import Nav from './components/Nav'
-import Information from './components/Information'
-import Projects from './components/Projects'
-import Contact from './components/Contact';
-import sr from './components/ScrollReveal'
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Information from "./components/Information";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import sr from "./components/ScrollReveal";
 
-export default class App extends Component {
+const App = () => {
+  const [darkTheme, setDarkTheme] = useState(false);
+  const [disableButton, setDisableButton] = useState(false);
 
-  state = {
-    dark: false,
-    disabled: false
-  }
+  useEffect(() => {
+    sr.reveal("header", {
+      duration: 2000,
+      scale: 0.95,
+    });
+    sr.reveal("nav", {
+      duration: 2000,
+      scale: 0.95,
+    });
+    sr.reveal("#information", {
+      duration: 2000,
+      scale: 0.95,
+    });
+    sr.reveal("#languages", {
+      duration: 2000,
+      scale: 0.8,
+      origin: "bottom",
+      distance: "80px",
+    });
+    sr.reveal("#projectsLeft", {
+      duration: 2000,
+      origin: "left",
+      distance: "80px",
+    });
+    sr.reveal("#projectsRight", {
+      duration: 2000,
+      scale: 0.8,
+      origin: "left",
+      distance: "80px",
+    });
+  }, []);
 
-  onClick = async () => {
-    const newMode = !this.state.dark;
-    await this.setState({ dark: newMode, disabled: true })
-    this.changeMode();
-  }
+  const toggleTheme = () => {
+    // setDisableButton(true);
+    setDarkTheme(!darkTheme);
+    changeTheme();
+  };
 
-  async changeMode() {
-
-    const body = document.querySelector("body")
-    const links = document.querySelectorAll('a');
-    const spanText = document.querySelector("#textSpan");
-    const singleLink = document.querySelectorAll(".link");
-
-    //h2 header
-    const h2Header = document.querySelectorAll("h2");
-    const contactMeLinkHeader = document.getElementById("contactMe");
-    const headerLink = document.querySelector("#headerLink");
-    const arrow = document.querySelector(".fa-arrow-right");
-
-    //Card
-    const cards = document.querySelectorAll(".card_container");
-    const card = document.querySelectorAll(".card")
-    console.log(card)
-
-    //Information
-    const informationRight = document.getElementById("rightInformation");
-
-    //Contact
-    const getInTouch = document.querySelector(".getInTouch");
-
-    //Footer
-    const footer = document.getElementById("footer");
-
-    if (this.state.dark) {
-      
-      for (let i = links.length; i--;) {
-        links[i].style.color = "white";
-      }
-
-      for (let i = singleLink.length; i--;) {
-        singleLink[i].style.color = "#F20530"
-      }
-      
-      for (let i = h2Header.length; i--;) {
-        h2Header[i].style.color = "white"
-      }
-
-      for (let i = cards.length; i--;) {
-        cards[i].style.background = "#1C1C1C"
-      }
-
-      for (let i = card.length; i--;) {
-        card[i].children[0].style.background = "#292929"
-        card[i].children[1].style.color = "white"
-        card[i].children[3].style.background = "#292929"
-        card[i].children[3].style.color = "white"
-      }
-
-      informationRight.style.background = "#1C1C1C"
-      informationRight.style.color = "white"
-
-      body.style.background = "#1C1C1C"
-      body.style.color = "white"
-
-      spanText.style.color = "white"
-
-      headerLink.style.color = "white"
-      headerLink.style.border = "2px solid white"
-      contactMeLinkHeader.style.color ="white"
-
-      arrow.style.color = "white"
-
-      getInTouch.style.color = "white"
-
-      footer.style.color = "white"
-
+  const changeTheme = () => {
+    const isDarkTheme = darkTheme;
+    if (!isDarkTheme) {
+      document.documentElement.style.setProperty("--font-color", "#fff");
+      document.documentElement.style.setProperty("--bg-color", "#1C1C1C");
+      document.querySelectorAll(".blackToWhite").forEach((element) => (element.style.color = "#fff"));
+      document.querySelectorAll(".whiteToBlackBG").forEach((element) => (element.style.backgroundColor = "#1c1c1c"));
+      document.querySelectorAll(".blackToGreyBG").forEach((element) => (element.style.backgroundColor = "#2e2e2e"));
+      document.querySelectorAll(".blackerToBlackBG").forEach((element) => (element.style.backgroundColor = "#2e2e2e"));
+      document.querySelectorAll(".redToWhite").forEach((element) => (element.style.color = "#fff"));
     } else {
-      for (let i = links.length; i--;) {
-        links[i].style.color = "#2E2E2E";
-      }
-      for (let j = singleLink.length; j--;) {
-        singleLink[j].style.color = "#F20530"
-      }
-      for (let k = h2Header.length; k--;) {
-        h2Header[k].style.color = "#2E2E2E"
-      }
-
-      for (let i = cards.length; i--;) {
-        cards[i].style.background = "white"
-      }
-
-      for (let i = card.length; i--;) {
-        card[i].children[0].style.background = "#2E2E2E"
-        card[i].children[1].style.color = "black"
-        card[i].children[3].style.background = "rgb(240, 240, 240)"
-        card[i].children[3].style.color = "#2E2E2E"
-      }
-
-      body.style.background = "white"
-      body.style.color = "#2E2E2E"
-
-      spanText.style.color = "#2E2E2E"
-
-      informationRight.style.background = "white"
-      informationRight.style.color = "#1C1C1C"
-
-      headerLink.style.color = "#F20530"
-      headerLink.style.border = "2px solid #F20530" 
-      contactMeLinkHeader.style.color ="#F20530"
-
-      arrow.style.color = "#F20530"
-
-      getInTouch.style.color = "#F20530"
-
-      footer.style.color = "#1C1C1C"
+      document.documentElement.style.setProperty("--font-color", "#2e2e2e");
+      document.documentElement.style.setProperty("--bg-color", "#fff");
+      document.querySelectorAll(".blackToWhite").forEach((element) => (element.style.color = "#2e2e2e"));
+      document.querySelectorAll(".whiteToBlackBG").forEach((element) => (element.style.backgroundColor = "#fff"));
+      document.querySelectorAll(".blackToGreyBG").forEach((element) => (element.style.backgroundColor = "rgb(240, 240, 240)"));
+      document.querySelectorAll(".blackerToBlackBG").forEach((element) => (element.style.backgroundColor = "#1c1c1c"));
+      document.querySelectorAll(".redToWhite").forEach((element) => (element.style.color = "#f20530"));
     }
+  };
 
-    await this.setState({ disabled: false })
-  }
+  return (
+    <div className="" id="app">
+      <Nav disableButton={disableButton} toggleTheme={toggleTheme} darkTheme={darkTheme} />
+      <Header darkTheme={darkTheme} />
+      <Information />
+      <Projects />
+      <Contact />
+    </div>
+  );
+};
 
-  componentDidMount() {
-
-    sr.reveal('header', {
-      duration: 2000,
-      scale: 0.95
-    })
-    sr.reveal('nav', {
-      duration: 2000,
-      scale: 0.95
-    })
-    sr.reveal('#information', {
-      duration: 2000,
-      scale: 0.95
-    })
-    sr.reveal('#languages', {
-      duration: 2000,
-      scale: 0.8,
-      origin: 'bottom',
-      distance: '80px'
-    })
-    sr.reveal('#projectsLeft', {
-      duration: 2000,
-      // scale: 0.8,
-      origin: 'left',
-      distance: '80px'
-    })
-    sr.reveal('#projectsRight', {
-      duration: 2000,
-      scale: 0.8,
-      origin: 'left',
-      distance: '80px'
-    })
-    
-  }
-
-  render() {
-    return (
-      <div className="" id="">
-        <Nav disabled={this.state.disabled} onClick={this.onClick} dark={this.state.dark} />
-        <Header dark={this.state.dark} />
-        <Information />
-        <Projects />
-        <Contact />
-      </div>
-    )
-  }
-}
+export default App;

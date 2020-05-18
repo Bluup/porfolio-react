@@ -1,119 +1,97 @@
 @include mobile {
-    #information {
-        width: 100%;
-        padding:0%;
-        padding-top: 20%;
+  #information {
+    width: 100%;
+    padding: 0%;
+    padding-top: 20%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+
+    #whoAmI {
+      padding: 30px;
+      box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
+    }
+
+    .left {
+      text-align: left;
+      font-size: 3vh;
+      font-weight: weight(bold);
+      margin-left: 5%;
+    }
+
+    .right {
+      overflow: hidden;
+      font-size: 3vh;
+      padding: 0% 30px;
+      width: 90%;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.02), 0 4.9px 4.8px rgba(0, 0, 0, 0.028), 0 9.3px 9px rgba(0, 0, 0, 0.035),
+        0 16.5px 16.1px rgba(0, 0, 0, 0.042), 0 30.9px 30.1px rgba(0, 0, 0, 0.05), 0 74px 72px rgba(0, 0, 0, 0.07);
+
+      background: white;
+      margin-top: 10vh;
+
+      .languagesContainer {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-evenly;
-        align-content: center;
-        // color: $font-color;
-        // background: white;
-
-        #whoAmI {
-            padding: 30px;
-            box-shadow: -17px 0 10px -15px rgba(0,0,0,0.4);
+        i {
+          font-size: 4vh;
+          margin: 10px 30px 10px 0;
+          text-shadow: 6px 6px 2px rgba(0, 0, 0, 0.1);
         }
-
-        .left {
-            text-align: left;
-            font-size: 3vh;
-            font-weight: weight(bold);
-            margin-left: 5%;
-        }
-
-        .right {
-            overflow: hidden;
-            font-size: 3vh;
-            padding: 0% 30px;
-            width: 90%;
-            box-shadow: -17px 0 10px -15px rgba(0,0,0,0.4);
-            background: white;
-            margin-top: 10vh;
-
-            .languagesContainer{
-                display: flex;
-                flex-flow: row wrap;
-                i{
-                    font-size: 4vh;
-                    margin: 10px 30px 10px 0;
-                    text-shadow: 6px 6px 2px rgba(0,0,0,0.1);
-                }
-            }
-        }
-
-        .img_container {
-            overflow: hidden;
-            border-radius: 500px;
-            height: 40%;
-            width: 40%;
-            display: block;
-            margin: auto;
-            box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
-
-            img {
-                width: 150%;
-                height: auto;
-                transform: translate(-10px,10px);
-            }
-        }
+      }
     }
+
+    .img_container {
+      overflow: hidden;
+      border-radius: 500px;
+      height: 40%;
+      width: 40%;
+      display: block;
+      margin: auto;
+      box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.3);
+
+      img {
+        width: 150%;
+        height: auto;
+        transform: translate(-10px, 10px) scale(1.2);
+      }
+    }
+  }
 }
 @include desktop {
-    #information {
-        width: 100%;
-        padding: 4% 0%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-        align-content: center;
-        // color: $font-color;
+  #information {
+    padding: 4% 0%;
 
-        #whoAmI {
-            padding: 50px 0px 50px 40px;
-            box-shadow: -17px 0 10px -15px rgba(0,0,0,0.4);
-        }
-
-        .left {
-            text-align: left;
-            font-size: 7vh;
-            font-weight: weight(bold);
-            margin-left: 8%;
-        }
-
-        .right {
-            margin-top: 0vh;
-            overflow: hidden;
-            width: 40%;
-            font-size: 3vh;
-            padding: 4%;
-            box-shadow: 0px 18px 18px -10px rgba(0,0,0,0.4);
-            background: white;
-
-            .languagesContainer{
-                display: flex;
-                flex-flow: row wrap;
-                i{
-                    font-size: 5vh;
-                    margin: 10px 20px;
-                }
-            }
-        }
-
-        .img_container {
-            overflow: hidden;
-            border-radius: 500px;
-            height: 200px;
-            width: 200px;
-            display: block;
-            margin: auto;
-            box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
-
-            img {
-                width: 150%;
-                height: auto;
-                transform: translateX(-20px);
-            }
-        }
+    #whoAmI {
+      padding: 50px 0px 50px 40px;
     }
+
+    .left {
+      font-size: 7vh;
+      margin-left: 8%;
+    }
+
+    .right {
+      margin-top: 0vh;
+      width: 40%;
+      padding: 4%;
+
+      .languagesContainer {
+        i {
+          font-size: 5vh;
+          margin: 10px 20px;
+        }
+      }
+    }
+
+    .img_container {
+      height: 200px;
+      width: 200px;
+
+      img {
+        transform: translateX(-20px);
+      }
+    }
+  }
 }

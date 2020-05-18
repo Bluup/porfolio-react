@@ -60,6 +60,11 @@ input::placeholder, textarea::placeholder {
 /*
     COLORS
 */
+:root {
+  --font-color: #2e2e2e;
+  --bg-color: #fff;
+}
+
 /*
     FONT WEIGHT
 */
@@ -77,7 +82,7 @@ input::placeholder, textarea::placeholder {
 */
 @media (min-width: 320px) {
   nav {
-    padding: 50px 10px;
+    padding: 40px 10px;
     font-weight: 600;
     font-size: 2.5vh;
     width: 100%;
@@ -97,24 +102,38 @@ input::placeholder, textarea::placeholder {
   nav a:hover {
     opacity: 0.7;
   }
-  nav .logo {
+  nav .brand-logo {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 4vh;
     color: white;
     margin-right: 20px;
     padding: 10px;
-    background: #F20530;
+    background: #f20530;
     position: absolute;
     -webkit-transform: translateY(-30%);
             transform: translateY(-30%);
   }
-  nav span.text {
-    color: #2E2E2E;
-    margin-left: 80px;
+  nav .brand-text {
+    color: var(--font-color);
+    margin-left: 60px;
   }
   nav .switchLi {
     float: right;
+    margin-right: 20px;
+    position: relative;
+  }
+  nav .switchLi i {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 4px;
+    z-index: 100;
+  }
+  nav .switchLi-sun {
+    left: -60%;
+  }
+  nav .switchLi-moon {
+    right: -43%;
   }
   nav .contact {
     float: right;
@@ -126,6 +145,9 @@ input::placeholder, textarea::placeholder {
   nav {
     padding: 50px;
   }
+  nav .brand-text {
+    margin-left: 80px;
+  }
   nav .contact {
     float: right;
     display: block;
@@ -133,67 +155,67 @@ input::placeholder, textarea::placeholder {
 }
 
 @media (min-width: 320px) {
-  header {
+  .header {
     width: 100%;
     min-height: 82vh;
     overflow: hidden;
     padding: 13% 0 1% 8%;
-    color: #2E2E2E;
+    color: var(--font-color);
   }
-  header h1 {
+  .header-title {
     font-size: 9vh;
     width: 100%;
   }
-  header h2 {
+  .header-subtitle {
     width: 60%;
     margin-bottom: 9vh;
   }
-  header a.contact {
-    display: block;
-    color: #F20530;
+  .header-contact {
+    display: inline-block;
+    color: #f20530;
     text-decoration: none;
     margin-top: 4%;
     font-size: 2vh;
     font-weight: bold;
     margin-top: 5vh;
   }
-  header .headerLink {
+  .header-headerLink {
     text-decoration: none;
-    border: 2px solid #F20530;
+    border: 2px solid #f20530;
     font-size: 3vh;
     padding: 10px 20px;
-    color: #F20530;
+    color: #f20530;
     font-weight: 600;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
   }
-  header .headerLink i {
+  .header-headerLink i {
     font-size: 1rem;
     margin-left: 10px;
-    color: #F20530;
+    color: #f20530;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
   }
-  header .headerLink:hover {
-    background: #F20530;
+  .header-headerLink:hover {
+    background: #f20530;
     color: white;
     text-decoration: none;
-    border: 2px solid #F20530;
+    border: 2px solid #f20530;
   }
-  header .headerLink:hover i {
+  .header-headerLink:hover i {
     color: white;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-  header .scrollDown {
+  .header .scrollDown {
     margin-top: 16vh;
     width: 100%;
     text-align: left;
-    color: #2E2E2E;
+    color: var(--font-color);
     font-weight: bold;
     font-size: 2.2vh;
   }
-  header .scrollDown i {
+  .header .scrollDown i {
     font-size: 4vh;
     margin-right: 10px;
     -webkit-animation: bounce 2s ease-in-out infinite;
@@ -232,17 +254,17 @@ input::placeholder, textarea::placeholder {
 }
 
 @media (min-width: 768px) {
-  header {
+  .header {
     padding: 2% 0 1% 12%;
   }
-  header h1 {
+  .header-title {
     font-size: 15vh;
     width: 50%;
   }
-  header a.contact {
+  .header-contact {
     margin-top: 4%;
   }
-  header .scrollDown {
+  .header .scrollDown {
     margin-top: 80px;
   }
 }
@@ -309,7 +331,7 @@ input::placeholder, textarea::placeholder {
     padding: 10px 13px 13px 13px;
     overflow: hidden;
     text-align: center;
-    background: #1C1C1C;
+    background: #1c1c1c;
     margin-bottom: 30px;
   }
   #projects .right .card_container .card .title .logo {
@@ -326,7 +348,7 @@ input::placeholder, textarea::placeholder {
   }
   #projects .right .card_container .card p {
     padding: 0 13px;
-    color: #2E2E2E;
+    color: var(--font-color);
     margin-bottom: 10px;
     display: block;
   }
@@ -335,7 +357,7 @@ input::placeholder, textarea::placeholder {
             transform: translateY(-20px);
     margin: 35px auto;
     display: block;
-    color: #F20530;
+    color: #f20530;
     font-weight: bold;
     text-decoration: underline;
   }
@@ -345,7 +367,7 @@ input::placeholder, textarea::placeholder {
   #projects .right .card_container .card .footer {
     font-weight: normal;
     text-align: center;
-    color: #2E2E2E;
+    color: var(--font-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -423,7 +445,7 @@ input::placeholder, textarea::placeholder {
     padding: 10px 13px 13px 13px;
     overflow: hidden;
     text-align: center;
-    background: #1C1C1C;
+    background: #1c1c1c;
     margin-bottom: 30px;
   }
   #projects .right .card_container .card .title .logo {
@@ -441,14 +463,14 @@ input::placeholder, textarea::placeholder {
   #projects .right .card_container .card p {
     display: block;
     padding: 0 13px;
-    color: #2E2E2E;
+    color: var(--font-color);
     margin-bottom: 10px;
   }
   #projects .right .card_container .card a.link {
     margin: 0;
     -webkit-transform: translateY(0);
             transform: translateY(0);
-    color: #F20530;
+    color: #f20530;
     font-weight: bold;
     text-decoration: none;
   }
@@ -458,7 +480,7 @@ input::placeholder, textarea::placeholder {
   #projects .right .card_container .card .footer {
     font-weight: normal;
     text-align: center;
-    color: #2E2E2E;
+    color: var(--font-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -510,8 +532,8 @@ input::placeholder, textarea::placeholder {
     font-size: 3vh;
     padding: 0% 30px;
     width: 90%;
-    -webkit-box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
-            box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.02), 0 4.9px 4.8px rgba(0, 0, 0, 0.028), 0 9.3px 9px rgba(0, 0, 0, 0.035), 0 16.5px 16.1px rgba(0, 0, 0, 0.042), 0 30.9px 30.1px rgba(0, 0, 0, 0.05), 0 74px 72px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.02), 0 4.9px 4.8px rgba(0, 0, 0, 0.028), 0 9.3px 9px rgba(0, 0, 0, 0.035), 0 16.5px 16.1px rgba(0, 0, 0, 0.042), 0 30.9px 30.1px rgba(0, 0, 0, 0.05), 0 74px 72px rgba(0, 0, 0, 0.07);
     background: white;
     margin-top: 10vh;
   }
@@ -542,75 +564,36 @@ input::placeholder, textarea::placeholder {
   #information .img_container img {
     width: 150%;
     height: auto;
-    -webkit-transform: translate(-10px, 10px);
-            transform: translate(-10px, 10px);
+    -webkit-transform: translate(-10px, 10px) scale(1.2);
+            transform: translate(-10px, 10px) scale(1.2);
   }
 }
 
 @media (min-width: 768px) {
   #information {
-    width: 100%;
     padding: 4% 0%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -ms-flex-line-pack: center;
-        align-content: center;
   }
   #information #whoAmI {
     padding: 50px 0px 50px 40px;
-    -webkit-box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
-            box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
   }
   #information .left {
-    text-align: left;
     font-size: 7vh;
-    font-weight: 600;
     margin-left: 8%;
   }
   #information .right {
     margin-top: 0vh;
-    overflow: hidden;
     width: 40%;
-    font-size: 3vh;
     padding: 4%;
-    -webkit-box-shadow: 0px 18px 18px -10px rgba(0, 0, 0, 0.4);
-            box-shadow: 0px 18px 18px -10px rgba(0, 0, 0, 0.4);
-    background: white;
-  }
-  #information .right .languagesContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
   }
   #information .right .languagesContainer i {
     font-size: 5vh;
     margin: 10px 20px;
   }
   #information .img_container {
-    overflow: hidden;
-    border-radius: 500px;
     height: 200px;
     width: 200px;
-    display: block;
-    margin: auto;
-    -webkit-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.3);
   }
   #information .img_container img {
-    width: 150%;
-    height: auto;
     -webkit-transform: translateX(-20px);
             transform: translateX(-20px);
   }
@@ -642,7 +625,7 @@ input::placeholder, textarea::placeholder {
     padding: 50px 0px 50px 40px;
     -webkit-box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
             box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
-    color: #F20530;
+    color: #f20530;
   }
   #contact .questions h1 {
     font-weight: 600;
@@ -655,7 +638,7 @@ input::placeholder, textarea::placeholder {
   #contact .questions a {
     font-size: 4vh;
     margin: 0 2vh;
-    color: #F20530;
+    color: #f20530;
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -691,7 +674,7 @@ input::placeholder, textarea::placeholder {
     padding: 50px 0px 50px 40px;
     -webkit-box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
             box-shadow: -17px 0 10px -15px rgba(0, 0, 0, 0.4);
-    color: #F20530;
+    color: #f20530;
   }
   #contact .questions h1 {
     font-weight: 600;
@@ -704,7 +687,7 @@ input::placeholder, textarea::placeholder {
   #contact .questions a {
     font-size: 4vh;
     margin: 0 2vh;
-    color: #F20530;
+    color: #f20530;
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -717,7 +700,7 @@ input::placeholder, textarea::placeholder {
 @media (min-width: 320px) {
   .footer {
     width: 100%;
-    color: #2E2E2E;
+    color: var(--font-color);
     padding: 20px;
     text-align: center;
     margin-top: 20px;
@@ -737,7 +720,7 @@ input::placeholder, textarea::placeholder {
   bottom: 0;
   position: fixed;
   z-index: 1;
-  background: #F20530;
+  background: #f20530;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -758,7 +741,7 @@ input::placeholder, textarea::placeholder {
   width: 30px;
   height: 30px;
   border: 3px solid white;
-  border-bottom: 3px solid #F20530;
+  border-bottom: 3px solid #f20530;
   border-radius: 50px;
   -webkit-animation: spinner 1s linear infinite;
           animation: spinner 1s linear infinite;
@@ -792,10 +775,10 @@ input::placeholder, textarea::placeholder {
   .switch {
     position: absolute;
     display: inline-block;
-    width: 45px;
-    height: 24px;
+    width: 40px;
+    height: 20px;
     right: 8%;
-    top: 42%;
+    top: 0px;
   }
   /* Hide default HTML checkbox */
   .switch input {
@@ -812,30 +795,30 @@ input::placeholder, textarea::placeholder {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
   .slider:before {
     position: absolute;
     content: "";
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     left: 4px;
-    bottom: 4px;
+    bottom: 3px;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #2196f3;
   }
   input:focus + .slider {
-    -webkit-box-shadow: 0 0 1px #2196F3;
-            box-shadow: 0 0 1px #2196F3;
+    -webkit-box-shadow: 0 0 1px #2196f3;
+            box-shadow: 0 0 1px #2196f3;
   }
   input:checked + .slider:before {
-    -webkit-transform: translateX(21px);
-    transform: translateX(21px);
+    -webkit-transform: translateX(18px);
+    transform: translateX(18px);
   }
   /* Rounded sliders */
   .slider.round {
@@ -848,59 +831,20 @@ input::placeholder, textarea::placeholder {
 
 @media (min-width: 768px) {
   .switch {
-    position: absolute;
-    display: inline-block;
     width: 40px;
     height: 20px;
     right: 5%;
     top: 42%;
   }
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
   .slider:before {
-    position: absolute;
-    content: "";
     height: 12px;
     width: 12px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  input:focus + .slider {
-    -webkit-box-shadow: 0 0 1px #2196F3;
-            box-shadow: 0 0 1px #2196F3;
   }
   input:checked + .slider:before {
     -webkit-transform: translateX(20px);
             transform: translateX(20px);
-  }
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  .slider.round:before {
-    border-radius: 50%;
   }
 }
 
@@ -912,14 +856,14 @@ input::placeholder, textarea::placeholder {
 }
 
 a {
-  color: #2E2E2E;
+  color: var(--font-color);
 }
 
 body {
-  background: white;
+  background: var(--bg-color);
 }
 
 span {
-  color: #F20530;
+  color: #f20530;
 }
 /*# sourceMappingURL=main.css.map */
